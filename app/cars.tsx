@@ -1,15 +1,19 @@
 import { Stack, useRouter } from "expo-router";
 import { Pressable, Text, View } from "react-native";
 import { Menu } from "../components/Menu";
+import { useState } from "react";
+import { Button } from "@/components/Button";
 
 export default function Cars() {
   const router = useRouter();
+
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <>
       <Stack.Screen
         options={{
-          headerRight: () => <Menu />,
+          headerRight: showMenu ? () => <Menu /> : () => null,
         }}
       />
       <View
@@ -22,12 +26,17 @@ export default function Cars() {
         }}
       >
         <Text>You are on another page</Text>
-        <Pressable
-          style={{ backgroundColor: "blue", padding: 8 }}
-          onPress={() => router.back()}
+        <Button onPress={() => setShowMenu((prev) => !prev)}>
+          <Text>Toggle Show Menu</Text>
+        </Button>
+        <Button
+          onPress={() => {
+            setShowMenu(false);
+            router.back();
+          }}
         >
           <Text>Go home</Text>
-        </Pressable>
+        </Button>
       </View>
     </>
   );

@@ -1,27 +1,22 @@
 import React from "react";
 import { Host, ContextMenu, Button } from "@expo/ui/swift-ui";
+import { Button as MyButton } from "@/components/Button";
+import { useRouter } from "expo-router";
+import { Text } from "react-native";
 
 export function Menu() {
+  const router = useRouter();
+
   return (
-    <Host style={{ width: 150, height: 50 }}>
+    <Host matchContents={{ horizontal: true, vertical: false }}>
       <ContextMenu>
         <ContextMenu.Items>
-          <Button
-            systemImage="person.crop.circle.badge.xmark"
-            onPress={() => console.log("Pressed1")}
-          >
-            Hello
-          </Button>
-          <Button
-            variant="bordered"
-            systemImage="heart"
-            onPress={() => console.log("Pressed2")}
-          >
-            Love it
-          </Button>
+          <Button onPress={() => router.back()}>Go home</Button>
         </ContextMenu.Items>
         <ContextMenu.Trigger>
-          <Button variant="bordered">Show Menu</Button>
+          <MyButton>
+            <Text>🧰</Text>
+          </MyButton>
         </ContextMenu.Trigger>
       </ContextMenu>
     </Host>

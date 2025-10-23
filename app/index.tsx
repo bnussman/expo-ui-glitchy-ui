@@ -1,5 +1,6 @@
+import { Button } from "@/components/Button";
 import { useRouter } from "expo-router";
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function Cars() {
   const router = useRouter();
@@ -17,18 +18,12 @@ export default function Cars() {
       <Text>
         Reproduction for Expo UI causing RN components to visually glitch
       </Text>
-      <Pressable
-        style={{ backgroundColor: "pink", padding: 8 }}
-        onPress={() => alert("Hey!")}
-      >
+      <Button onPress={() => alert("Hey!")}>
         <Text>Button</Text>
-      </Pressable>
-      <Pressable
-        style={{ backgroundColor: "yellow", padding: 8 }}
-        onPress={() => router.navigate("/cars")}
-      >
+      </Button>
+      <Button onPress={() => router.push("/cars")}>
         <Text>Go to other page</Text>
-      </Pressable>
+      </Button>
     </View>
   );
 }
