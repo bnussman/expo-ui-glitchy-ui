@@ -4,8 +4,9 @@ export function Button(props: PressableProps) {
   return (
     <Pressable
       {...props}
-      style={({ pressed }) => [
-        { backgroundColor: pressed ? "red" : "pink", padding: 8 },
+      style={(state) => [
+        { backgroundColor: state.pressed ? "red" : "pink", padding: 8 },
+        typeof props.style === "function" ? props.style(state) : props.style,
       ]}
     />
   );

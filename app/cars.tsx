@@ -1,13 +1,14 @@
 import { Stack, useRouter } from "expo-router";
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { Menu } from "../components/Menu";
 import { useState } from "react";
 import { Button } from "@/components/Button";
+import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 export default function Cars() {
   const router = useRouter();
 
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
 
   return (
     <>
@@ -37,6 +38,11 @@ export default function Cars() {
         >
           <Text>Go home</Text>
         </Button>
+        <BottomSheet snapPoints={[200, 500]}>
+          <BottomSheetView style={{ flex: 1 }}>
+            <Text>Awesome 🎉</Text>
+          </BottomSheetView>
+        </BottomSheet>
       </View>
     </>
   );
