@@ -35,9 +35,14 @@ export function Home() {
 
   return (
     <ScrollView
+      centerContent
       contentContainerStyle={{ padding: 8, gap: 16, alignItems: "center" }}
     >
-      <Text>This is the "Main" page</Text>
+      <Text style={{ textAlign: "center" }}>
+        To reproduce the bug, click the button below, then, go back to the home
+        screen, then do that one more time.
+      </Text>
+      <Text>You'll notice that the button is distorted.</Text>
       <Button onPress={() => navigation.navigate("Other")}>
         <Text>Go to other page</Text>
       </Button>
