@@ -35,7 +35,6 @@ export function Home() {
 
   return (
     <ScrollView
-      centerContent
       contentContainerStyle={{ padding: 8, gap: 16, alignItems: "center" }}
     >
       <Text>This is the "Main" page</Text>
