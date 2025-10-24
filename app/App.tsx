@@ -1,11 +1,6 @@
-import { Navigation } from "@/navigators/Stack";
 import React from "react";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Navigation } from "@/navigators/Stack";
 
 export function App() {
-  return (
-    <GestureHandlerRootView>
-      <Navigation />
-    </GestureHandlerRootView>
-  );
+  return <Navigation />;
 }
