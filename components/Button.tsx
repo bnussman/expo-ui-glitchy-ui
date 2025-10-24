@@ -5,7 +5,11 @@ export function Button(props: PressableProps) {
     <Pressable
       {...props}
       style={(state) => [
-        { backgroundColor: state.pressed ? "red" : "pink", padding: 8 },
+        {
+          backgroundColor: state.pressed ? "red" : "pink",
+          padding: 8,
+          borderRadius: 8,
+        },
       ]}
     />
   );

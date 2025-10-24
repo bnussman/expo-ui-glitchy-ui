@@ -28,7 +28,10 @@ export function Home() {
   if (!show) {
     return (
       <View>
-        <Text>No scroll view in this UI</Text>
+        <Text>
+          No scroll view in this UI. Conditionally rendering a scrollview seems
+          to be what triggers the issue.
+        </Text>
       </View>
     );
   }
