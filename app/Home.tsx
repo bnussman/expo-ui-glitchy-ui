@@ -1,7 +1,7 @@
 import { Button } from "@/components/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { ScrollView, Text } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
 export function Home() {
   const navigation = useNavigation();
@@ -10,6 +10,7 @@ export function Home() {
 
   /**
    * I know this looks stupid...
+   *
    * In my real app, my React Query cache updates
    * and causes this component to render different contents.
    *
@@ -25,7 +26,11 @@ export function Home() {
   }, []);
 
   if (!show) {
-    return null;
+    return (
+      <View>
+        <Text>No scroll view in this UI</Text>
+      </View>
+    );
   }
 
   return (
